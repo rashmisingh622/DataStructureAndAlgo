@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -139,20 +140,27 @@ namespace DataStructureAndAlgo
                 new char[] { '.', '6', '.', '.', '.', '.', '2', '8', '.' }, 
                 new char[] { '.', '.', '.', '4', '1', '9', '.', '.', '5' }, 
                 new char[] { '.', '.', '.', '.', '8', '.', '.', '7', '9' }};
+
             var sudoku = sudokuHelper.GetSolvedSudoku(input);
+
+            while (Array.Exists(sudoku, x => x.Contains('.')))
+            {
+                sudokuHelper.GetSolvedSudoku(sudoku);
+            }
+
             for (int i = 0; i < sudoku.Length; i++)
             {
-                for (int j = 0; j < sudoku[i].Length; j++)
+                for (int j = 0; j < sudoku.Length; j++)
                 {
-                    Console.Write(sudoku[i][i] + " ");
+                    Console.Write(sudoku[i][j].ToString() + " ");
                 }
 
                 Console.WriteLine();
             }
-                   
+
             //p.BackspaceCompare("ab##", "c#d#");
             //Console.WriteLine(p.PrintExcelColumnName(123));
-            
+
             Console.ReadLine();
         }
     }

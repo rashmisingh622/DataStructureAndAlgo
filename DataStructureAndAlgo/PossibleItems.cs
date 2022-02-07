@@ -32,14 +32,14 @@
 
             for (int i = 0; i < arr.Length; i++)
             {
-                if (arr[row][i] == '.')
+                if (arr[row][i] != '.')
                 {
-                    rows.Add(arr[row][i]);
+                    rows.Add(Convert.ToInt32(arr[row][i].ToString()));
                 }
 
-                if (arr[i][col] == '.')
+                if (arr[i][col] != '.')
                 {
-                    cols.Add(arr[i][col]);
+                    cols.Add(Convert.ToInt32(arr[i][col].ToString()));
                 }
             }
 
@@ -49,11 +49,11 @@
             foreach (var index in indexList)
             {
                 var rowAndCol = index.Split(',').ToArray();
-                var row1 = Convert.ToInt32(rowAndCol[0]);
-                var col1 = Convert.ToInt32(rowAndCol[1]);
+                var row1 = Convert.ToInt32(rowAndCol[0].ToString());
+                var col1 = Convert.ToInt32(rowAndCol[1].ToString());
                 if (arr[row1][col1] != '.')
                 {
-                    quadrants.Add(arr[row1][col1]);
+                    quadrants.Add(Convert.ToInt32(arr[row1][col1].ToString()));
                 }
             }
 

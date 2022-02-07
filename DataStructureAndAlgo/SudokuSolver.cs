@@ -13,7 +13,7 @@
         {
             for (int i = 0; i < inputArray.Length; i++)
             {
-                for (int j = 0; j < inputArray[i].Length; j++)
+                for (int j = 0; j < inputArray.Length; j++)
                 {
                     if (inputArray[i][j] == '.')
                     {
